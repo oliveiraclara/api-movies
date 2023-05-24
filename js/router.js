@@ -1,5 +1,7 @@
 'use strict'
 
+import { searchMovieSerie } from "./consult_api.js";
+
 const routes = {
     '/' : '/pages/home.html',
     '/search' : '/pages/search.html',
@@ -22,6 +24,9 @@ const route = async () =>{
 
     console.log(path)
 
+    if(path == '/search'){
+        document.getElementById('title').addEventListener('blur', searchMovieSerie)    
+      }
 }
 
 window.route = route
