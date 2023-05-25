@@ -1,11 +1,11 @@
 'use strict'
 
-import { searchMovieSerie } from "./consult_api.js";
+import { searchTitle } from "./api.js";
 
 const routes = {
-    '/' : '/pages/home.html',
-    '/search' : '/pages/search.html',
-    '/inside-search' : '/pages/card_result.html'
+    '/': '/index.html',
+    '/search': '/pages/search.html',
+    '/inside-search': '/pages/card_result.html'
 }
 
 const route = async () =>{
@@ -25,8 +25,14 @@ const route = async () =>{
     console.log(path)
 
     if(path == '/search'){
-        document.getElementById('title').addEventListener('blur', searchMovieSerie)    
-      }
+        document.getElementById('button__search').onclick = () => {
+            const title = document.getElementById('title').value
+
+            // console.log(title);        
+            searchTitle(title)
+        }
+    }
+    
 }
 
 window.route = route
