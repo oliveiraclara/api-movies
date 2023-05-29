@@ -1,21 +1,22 @@
 'use strict'
 
-class card extends HTMLElement {
+class Card extends HTMLElement {
     constructor() {
         super()
         this.shadow = this.attachShadow({ mode: 'open' });
         this.foto = null
-        this.title = 'Movie Title'
+        this.titulo = 'Movie Title'
         this.description = 'Plot'
     }
 
     static get observedAttributes(){
-        return['title', 'foto', 'description']
+        return['titulo', 'foto', 'description']
     }
 
     attributeChangedCallback(nameAttr, oldValue, newValue){
-        this[nameAttr] = newValue
-        
+        if (oldValue !== newValue) {
+            this[nameAttr] = newValue
+        }
     }
 
     connectedCallback() {
@@ -65,7 +66,7 @@ class card extends HTMLElement {
 
         const title = document.createElement('p')
         title.classList.add('card__text')
-        title.textContent= this.title
+        title.textContent= this.titulo
 
         const description = document.createElement('p')
         description.classList.add('plot')
@@ -78,4 +79,4 @@ class card extends HTMLElement {
 
 }
 
-customElements.define('card-wars', card)
+customElements.define('card-wars', Card)

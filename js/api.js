@@ -1,11 +1,11 @@
 'use strict'
 
-const createResult = (result) =>{
-    const card = document.createElement('card-leonid')
+const createResult = ({ Title, Plot, Poster }) =>{
+    const card = document.createElement('card-wars')
 
-    card.title = result.Title
-    card.description = result.Plot
-    card.foto = result.Poster
+    card.titulo = Title
+    card.description = Plot
+    card.foto =Poster
 
     return card
 }
@@ -16,7 +16,6 @@ export const searchTitle = async(title) =>{
     const response = await fetch(url)
     const data = await response.json()
     const titulo = await data
-    console.log(data);
     const container = document.getElementById('container')
     const cards = createResult(titulo)
 
