@@ -1,0 +1,41 @@
+@media (max-width:640px){
+    header{
+        height: 100%;
+    }
+    main{
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    main h1{
+        font-size: 1.5rem;
+        max-width: 100%;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 100px;
+    }
+    
+}
+@media(max-width: 960px){
+    header{
+        height: 100%;
+    }
+    main{
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    main h1{
+        font-size: 1.5rem;
+        width: 500px;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 100px;
+    }
+}
