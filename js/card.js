@@ -32,12 +32,13 @@ class Card extends HTMLElement {
             box-sizing: border-box;
         }
         .card{
-            width: 40vw;
-            height: 40vh;
-            background-color: purple;
+            width: 60vw;
+            height: 50vh;
+            background-color: var(--primary-color);
             padding: 30px;
             display: flex;
             gap: 24px;
+            justify-self: center;
         }
         .card__text{
             color: #fff;
@@ -45,8 +46,8 @@ class Card extends HTMLElement {
             font-weight: 600;
         }
         .card__image{
-            height: 300px;
-            width: 200px;
+            height: 100%;
+            width: 500px;
             background-color: #fff;
             background-image: url(${this.foto});
             background-size: cover;
